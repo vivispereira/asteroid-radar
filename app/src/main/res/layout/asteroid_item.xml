@@ -7,7 +7,7 @@
 
         <variable
             name="asteroid"
-            type="com.udacity.asteroidradar.Asteroid" />
+            type="com.viv.asteroidradar.Asteroid" />
 
     </data>
 
@@ -21,8 +21,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
             android:paddingTop="8dp"
+            android:paddingEnd="16dp"
             android:paddingBottom="4dp"
             android:text="@{asteroid.codename}"
             android:textColor="@color/default_text_color"
@@ -36,12 +36,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingStart="16dp"
-            android:paddingEnd="16dp"
             android:paddingTop="4dp"
+            android:paddingEnd="16dp"
             android:paddingBottom="4dp"
             android:text="@{asteroid.closeApproachDate}"
             android:textColor="@color/default_text_color"
-            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/codename_item"
             tools:text="2021-11-19" />
@@ -52,11 +51,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:layout_marginEnd="4dp"
+            android:contentDescription="@{asteroid.potentiallyHazardous ? @string/potentially_hazardous_asteroid_image : @string/not_hazardous_asteroid_image}"
             android:padding="18dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:statusIcon="@{asteroid.potentiallyHazardous}"
-            android:contentDescription="@{asteroid.potentiallyHazardous ? @string/potentially_hazardous_asteroid_image : @string/not_hazardous_asteroid_image}"
             tools:src="@drawable/ic_status_normal" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -4,6 +4,7 @@
     <string name="next_week_asteroids">View week asteroids</string>
     <string name="today_asteroids">View today asteroids</string>
     <string name="saved_asteroids">View saved asteroids</string>
+    <string name="detail_title">Asteroid detail</string>
     <string name="close_approach_data_title">Close approach date</string>
     <string name="absolute_magnitude_title">Absolute magnitude</string>
     <string name="estimated_diameter_title">Estimated diameter</string>
@@ -21,4 +22,5 @@
     <string name="nasa_picture_of_day_content_description_format">NASA\'s picture of day: %s</string>
     <string name="error_image_of_day">Failed to retrieve image of the day.</string>
     <string name="error_asteroid_list">Failed to retrieve list of Asteroids.</string>
+    <string name="picture_of_the_day">Picture of the day</string>
 </resources>

@@ -3,11 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
         <variable
             name="viewModel"
-            type="com.udacity.asteroidradar.main.MainViewModel" />
-
+            type="com.viv.asteroidradar.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,6 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/picture_of_the_day"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/placeholder_picture_of_day" />
 
