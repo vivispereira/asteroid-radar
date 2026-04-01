@@ -1,7 +1,6 @@
-package com.viv.asteroidradar.api
+package com.viv.asteroidradar.data.api
 
-import com.viv.asteroidradar.Constants
-import com.viv.asteroidradar.PictureOfDay
+import com.viv.asteroidradar.domain.PictureOfDay
 import retrofit2.http.GET
 import retrofit2.http.Query
 

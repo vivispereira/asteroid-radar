@@ -1,10 +1,10 @@
-package com.viv.asteroidradar.database
+package com.viv.asteroidradar.data.database
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class AsteroidDBItem constructor(
+class AsteroidDBItem(
     @PrimaryKey
     val id: Long,
     val codename: String,

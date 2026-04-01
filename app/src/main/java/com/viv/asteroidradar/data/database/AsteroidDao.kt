@@ -1,4 +1,4 @@
-package com.viv.asteroidradar.database
+package com.viv.asteroidradar.data.database
 
 import androidx.room.Dao
 import androidx.room.Database

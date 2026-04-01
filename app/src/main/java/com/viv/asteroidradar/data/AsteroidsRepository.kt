@@ -1,13 +1,12 @@
-package com.viv.asteroidradar.repository
+package com.viv.asteroidradar.data
 
-import com.viv.asteroidradar.Asteroid
+import com.viv.asteroidradar.domain.Asteroid
+import com.viv.asteroidradar.domain.PictureOfDay
 import com.viv.asteroidradar.BuildConfig
-import com.viv.asteroidradar.Constants
-import com.viv.asteroidradar.PictureOfDay
-import com.viv.asteroidradar.api.AsteroidApi
-import com.viv.asteroidradar.api.parseAsteroidsJsonResult
-import com.viv.asteroidradar.database.AsteroidDao
-import com.viv.asteroidradar.database.AsteroidDBItem
+import com.viv.asteroidradar.data.api.AsteroidApi
+import com.viv.asteroidradar.data.api.parseAsteroidsJsonResult
+import com.viv.asteroidradar.data.database.AsteroidDao
+import com.viv.asteroidradar.data.database.AsteroidDBItem
 import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*

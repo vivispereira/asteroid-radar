@@ -1,4 +1,4 @@
-package com.viv.asteroidradar.main
+package com.viv.asteroidradar.presentation.main
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -7,13 +7,13 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager
-import com.viv.asteroidradar.Asteroid
-import com.viv.asteroidradar.PictureOfDay
+import com.viv.asteroidradar.domain.Asteroid
+import com.viv.asteroidradar.domain.PictureOfDay
 import com.viv.asteroidradar.R
-import com.viv.asteroidradar.api.AsteroidApi
-import com.viv.asteroidradar.database.getDatabase
-import com.viv.asteroidradar.repository.AsteroidsRepository
-import com.viv.asteroidradar.worker.AsteroidWorker
+import com.viv.asteroidradar.data.api.getAsteroidApi
+import com.viv.asteroidradar.data.database.getDatabase
+import com.viv.asteroidradar.data.AsteroidsRepository
+import com.viv.asteroidradar.data.worker.AsteroidWorker
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
@@ -34,7 +34,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     private val database = application.getDatabase()
 
     private val repository = AsteroidsRepository(
-        asteroidApi = AsteroidApi,
+        asteroidApi = getAsteroidApi(),
         dao = database.asteroidDao
     )
     private val _error = MutableLiveData<Int>()

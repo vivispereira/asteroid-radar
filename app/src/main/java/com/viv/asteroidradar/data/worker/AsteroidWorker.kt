@@ -1,4 +1,4 @@
-package com.viv.asteroidradar.worker
+package com.viv.asteroidradar.data.worker
 
 import android.content.Context
 import android.net.wifi.WifiManager
@@ -6,16 +6,16 @@ import android.os.BatteryManager
 import android.util.Log
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.viv.asteroidradar.api.AsteroidApi
-import com.viv.asteroidradar.database.getDatabase
-import com.viv.asteroidradar.repository.AsteroidsRepository
+import com.viv.asteroidradar.data.AsteroidsRepository
+import com.viv.asteroidradar.data.api.getAsteroidApi
+import com.viv.asteroidradar.data.database.getDatabase
 
 
 class AsteroidWorker(private val context: Context, params: WorkerParameters) :
     CoroutineWorker(context, params) {
 
     private val repository = AsteroidsRepository(
-        asteroidApi = AsteroidApi,
+        asteroidApi = getAsteroidApi(),
         dao = context.getDatabase().asteroidDao
     )
 

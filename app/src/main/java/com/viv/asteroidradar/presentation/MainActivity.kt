@@ -1,10 +1,11 @@
-package com.viv.asteroidradar
+package com.viv.asteroidradar.presentation
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.viv.asteroidradar.R
 
 class MainActivity : AppCompatActivity() {
     

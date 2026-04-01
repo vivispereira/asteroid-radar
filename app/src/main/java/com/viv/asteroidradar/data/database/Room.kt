@@ -1,7 +1,8 @@
-package com.viv.asteroidradar.database
+package com.viv.asteroidradar.data.database
 
 import android.content.Context
 import androidx.room.Room
+import com.viv.asteroidradar.data.database.AsteroidDatabase
 
 private lateinit var instance: AsteroidDatabase
 

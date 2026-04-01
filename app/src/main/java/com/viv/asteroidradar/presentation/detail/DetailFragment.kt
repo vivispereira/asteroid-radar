@@ -1,4 +1,4 @@
-package com.viv.asteroidradar.detail
+package com.viv.asteroidradar.presentation.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater

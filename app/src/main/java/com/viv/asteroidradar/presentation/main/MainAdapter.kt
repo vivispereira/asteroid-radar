@@ -1,11 +1,11 @@
-package com.viv.asteroidradar.main
+package com.viv.asteroidradar.presentation.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.viv.asteroidradar.Asteroid
+import com.viv.asteroidradar.domain.Asteroid
 import com.viv.asteroidradar.databinding.AsteroidItemBinding
 
 class MainAdapter(

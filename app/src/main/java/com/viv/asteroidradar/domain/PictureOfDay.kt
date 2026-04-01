@@ -1,4 +1,4 @@
-package com.viv.asteroidradar
+package com.viv.asteroidradar.domain
 
 import com.squareup.moshi.Json
 

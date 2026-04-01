@@ -5,7 +5,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.viv.asteroidradar.main.MainViewModel" />
+            type="com.viv.asteroidradar.presentation.main.MainViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -18,16 +18,17 @@
             android:layout_width="match_parent"
             android:layout_height="220dp"
             app:layout_constraintEnd_toEndOf="parent"
+            android:background="#fff"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/activity_main_image_of_the_day"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:contentDescription="@string/picture_of_the_day"
                 android:scaleType="centerCrop"
+                android:contentDescription="@string/picture_of_the_day"
                 app:srcCompat="@drawable/placeholder_picture_of_day" />
 
             <TextView
