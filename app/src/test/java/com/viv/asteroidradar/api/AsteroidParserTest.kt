@@ -17,7 +17,7 @@ import java.util.Calendar
 import java.util.Locale
 
 @RunWith(RobolectricTestRunner::class)
-class NetworkUtilsTest {
+class AsteroidParserTest {
 
     private lateinit var testJsonObject: JSONObject
 

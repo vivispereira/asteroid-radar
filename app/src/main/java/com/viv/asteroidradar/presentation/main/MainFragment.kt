@@ -1,18 +1,17 @@
 package com.viv.asteroidradar.presentation.main
 
 import android.os.Bundle
-import android.view.*
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import androidx.lifecycle.observe
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.squareup.picasso.Picasso
 import com.viv.asteroidradar.R
 import com.viv.asteroidradar.databinding.FragmentMainBinding
-import com.viv.asteroidradar.presentation.main.MainAdapter
-import com.viv.asteroidradar.presentation.main.MainViewModel
 
 class MainFragment : Fragment() {
 

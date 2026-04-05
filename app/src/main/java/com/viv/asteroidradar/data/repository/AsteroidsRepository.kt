@@ -1,4 +1,4 @@
-package com.viv.asteroidradar.data
+package com.viv.asteroidradar.data.repository
 
 import com.viv.asteroidradar.domain.Asteroid
 import com.viv.asteroidradar.domain.PictureOfDay

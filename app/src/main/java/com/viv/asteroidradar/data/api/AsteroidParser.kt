@@ -3,8 +3,8 @@ package com.viv.asteroidradar.data.api
 import com.viv.asteroidradar.domain.Asteroid
 import org.json.JSONObject
 import java.text.SimpleDateFormat
-import java.util.*
-import kotlin.collections.ArrayList
+import java.util.Calendar
+import java.util.Locale
 
 const val API_QUERY_DATE_FORMAT = "yyyy-MM-dd"
 const val DEFAULT_END_DATE_DAYS = 7

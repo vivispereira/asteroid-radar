@@ -7,18 +7,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import androidx.work.PeriodicWorkRequest
 import androidx.work.WorkManager
+import com.viv.asteroidradar.R
+import com.viv.asteroidradar.data.repository.repository
+import com.viv.asteroidradar.data.worker.AsteroidWorker
 import com.viv.asteroidradar.domain.Asteroid
 import com.viv.asteroidradar.domain.PictureOfDay
-import com.viv.asteroidradar.R
-import com.viv.asteroidradar.data.api.getAsteroidApi
-import com.viv.asteroidradar.data.database.getDatabase
-import com.viv.asteroidradar.data.AsteroidsRepository
-import com.viv.asteroidradar.data.worker.AsteroidWorker
+import com.viv.asteroidradar.domain.usecase.GetAsteroidsUseCase
+import com.viv.asteroidradar.domain.usecase.GetDailyPictureUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import java.util.concurrent.TimeUnit
 
-class MainViewModel(application: Application) : AndroidViewModel(application) {
+public class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     init {
         val workManager = WorkManager.getInstance(application)
@@ -31,12 +31,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         )
     }
 
-    private val database = application.getDatabase()
-
-    private val repository = AsteroidsRepository(
-        asteroidApi = getAsteroidApi(),
-        dao = database.asteroidDao
-    )
+    private val getAsteroidsUseCase = GetAsteroidsUseCase(repository)
+    private val getDailyPictureUseCase = GetDailyPictureUseCase(repository)
     private val _error = MutableLiveData<Int>()
     val error: LiveData<Int>
         get() = _error
@@ -57,18 +53,13 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         _loading.value = true
         viewModelScope.launch(Dispatchers.IO) {
             try {
-                val asteroids = repository.getAsteroids()
-                if (asteroids.isEmpty()) {
-                    repository.loadAsteroids()
-                    _asteroids.postValue(repository.getAsteroids())
-                } else {
-                    _asteroids.postValue(asteroids)
-                }
+                val asteroids = getAsteroidsUseCase.execute()
+                _asteroids.postValue(asteroids)
             } catch (ex: Exception) {
                 _error.postValue(R.string.error_asteroid_list)
             }
             try {
-                _picture.postValue(repository.getDailyPicture())
+                _picture.postValue(getDailyPictureUseCase.execute())
             } catch (ex: Exception) {
                 _error.postValue(R.string.error_image_of_day)
             }
@@ -77,6 +68,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun showAsteroidDetails() {
-        _asteroids.value = null
+        _asteroids.value = emptyList()
     }
 }
