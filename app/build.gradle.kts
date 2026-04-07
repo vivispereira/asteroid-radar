@@ -82,7 +82,7 @@ dependencies {
     implementation(libs.converter.scalars)
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.recyclerview)
-    implementation(libs.picasso)
+    implementation(libs.coil)
     implementation(libs.androidx.work.runtime.ktx)
     ksp(libs.androidx.room.compiler)
 

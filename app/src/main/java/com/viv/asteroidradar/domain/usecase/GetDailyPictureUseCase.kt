@@ -7,6 +7,15 @@ class GetDailyPictureUseCase(
     private val repository: AsteroidsRepository
 ) {
     suspend fun execute(): PictureOfDay {
-        return repository.getDailyPicture()
+        val image = repository.getDailyPicture()
+        return if (image.mediaType != "image") {
+            PictureOfDay(
+                mediaType = "image",
+                title = "A Starburst Spiral Galaxy",
+                url = "https://apod.nasa.gov/apod/image/2604/ngc3310_gemini_1837.jpg"
+            )
+        } else {
+            image
+        }
     }
 }

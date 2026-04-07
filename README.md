@@ -62,24 +62,24 @@ The app follows the **MVVM (Model-View-ViewModel)** architecture pattern with a 
 
 ```
 ┌────────────────────────────────────────┐
-│          UI Layer                      │
+│               UI Layer                 │
 │  (MainActivity, MainFrag, DetailFrag)  │
 └─────────────────┬──────────────────────┘
                   │
 ┌─────────────────▼──────────────────────┐
-│        ViewModel Layer                 │
-│  (LiveData/StateFlow management)       │
+│           ViewModel Layer              │
+│     (LiveData/State management)        │
 └─────────────────┬──────────────────────┘
                   │
 ┌─────────────────▼──────────────────────┐
 │        Domain Layer (Use Cases)        │
-│  (Business logic orchestration)        │
+│      (Business logic orchestration)    │
 └─────────────────┬──────────────────────┘
                   │
 ┌─────────────────▼──────────────────────┐
-│      Repository Layer                  │
-│  (AsteroidsRepository)                 │
-│  Abstracts data sources                │
+│           Repository Layer             │
+│         (AsteroidsRepository)          │
+│         Abstracts data sources         │
 └────────────────┬───────────────────────┘
                  │
      ┌───────────┴──────────┐
@@ -114,7 +114,7 @@ The following diagram illustrates the main app flow from launch to data display:
 | **Networking** | Retrofit, Moshi, OkHttp                      |
 | **Data Persistence** | Room                                         |
 | **Lifecycle & Architecture** | ViewModel, LiveData, Navigation, WorkManager |
-| **Image Loading** | Picasso                                      |
+| **Image Loading** | Coil                                         |
 | **Async** | Kotlin Coroutines                            |
 | **Testing** | JUnit, Espresso, Robolectric, MockWebServer  |
 

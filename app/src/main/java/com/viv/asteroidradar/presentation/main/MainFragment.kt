@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.squareup.picasso.Picasso
+import coil.load
 import com.viv.asteroidradar.R
 import com.viv.asteroidradar.databinding.FragmentMainBinding
 
@@ -39,11 +39,10 @@ class MainFragment : Fragment() {
         }
 
         viewModel.picture.observe(viewLifecycleOwner) { picture ->
-            Picasso.get()
-                .load(picture.url)
-                .placeholder(R.drawable.placeholder_picture_of_day)
-                .error(R.drawable.placeholder_picture_of_day)
-                .into(binding.activityMainImageOfTheDay)
+            binding.activityMainImageOfTheDay.load(picture.url) {
+                placeholder(R.drawable.placeholder_picture_of_day)
+                error(R.drawable.placeholder_picture_of_day)
+            }
             binding.activityMainImageOfTheDay.contentDescription = picture.title
         }
 
