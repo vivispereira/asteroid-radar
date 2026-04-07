@@ -79,7 +79,6 @@ The app follows the **MVVM (Model-View-ViewModel)** architecture pattern with a 
 ┌─────────────────▼──────────────────────┐
 │           Repository Layer             │
 │         (AsteroidsRepository)          │
-│         Abstracts data sources         │
 └────────────────┬───────────────────────┘
                  │
      ┌───────────┴──────────┐
@@ -108,15 +107,15 @@ The following diagram illustrates the main app flow from launch to data display:
 
 ## Tech Stack
 
-| Category | Components                                   |
-|----------|----------------------------------------------|
-| **UI** | DataBinding, AppCompat, RecyclerView         |
-| **Networking** | Retrofit, Moshi, OkHttp                      |
-| **Data Persistence** | Room                                         |
+| Category | Components                                 |
+|----------|--------------------------------------------|
+| **UI** | DataBinding, Android View, RecyclerView    |
+| **Networking** | Retrofit, Moshi, OkHttp                    |
+| **Data Persistence** | Room                                       |
 | **Lifecycle & Architecture** | ViewModel, LiveData, Navigation, WorkManager |
-| **Image Loading** | Coil                                         |
-| **Async** | Kotlin Coroutines                            |
-| **Testing** | JUnit, Espresso, Robolectric, MockWebServer  |
+| **Image Loading** | Coil                                       |
+| **Async** | Kotlin Coroutines                          |
+| **Testing** | JUnit, Espresso  |
 
 ## API Configuration
 

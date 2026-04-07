@@ -1,7 +1,5 @@
-package com.viv.asteroidradar.api
+package com.viv.asteroidradar.data.api
 
-import com.viv.asteroidradar.data.api.getNextSevenDaysFormattedDates
-import com.viv.asteroidradar.data.api.parseAsteroidsJsonResult
 import org.json.JSONObject
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
